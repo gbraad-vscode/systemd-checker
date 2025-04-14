@@ -1,0 +1,53 @@
+{
+  "name": "systemd-checker",
+  "displayName": "systemd checker",
+  "publisher": "gbraad",
+  "author": {
+    "name": "Gerard Braad",
+    "email": "me@gbraad.nl"
+  },
+  "description": "Checks for systemd functionality on the host",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gbraad-vscode/systemd-checker"
+  },
+  "license": "MIT",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "icon": "img/icon.png",
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Systemd Checker"
+    },
+    "commands": [
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "webpack --mode production",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.98.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
+    "eslint": "^9.23.0",
+    "typescript": "^5.8.2",
+    "ts-loader": "^9.5.2",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
+  }
+}
